@@ -1,0 +1,9 @@
+[Unit]
+Description=AutoSSH service for a reverse tunnel from localhost to pleasefix4.us  
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/et-fone-home -M 0 -q -N -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3" et-remote@pleasefix4.us -R 1250:localhost:8080
+
+[Install]
+WantedBy=multi-user.targetb                                                  
